@@ -18,12 +18,6 @@ pipeline:
         type: CI
         spec:
           cloneCodebase: true
-          platform:
-            os: Linux
-            arch: Amd64
-          runtime:
-            type: Cloud
-            spec: {}
           execution:
             steps:
               - step:
@@ -38,3 +32,10 @@ pipeline:
                     dockerfile: Dockerfile
                     labels:
                       latest: "22.04"
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: DhrubaDemoCI2
+              namespace: dhruba-demo-ci
+              nodeSelector: {}
+              os: Linux
