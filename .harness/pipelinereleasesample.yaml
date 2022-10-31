@@ -37,5 +37,6 @@ pipeline:
             spec:
               connectorRef: DhrubaDemoCI2
               namespace: dhruba-demo-ci
+              automountServiceAccountToken: true
               nodeSelector: {}
               os: Linux
