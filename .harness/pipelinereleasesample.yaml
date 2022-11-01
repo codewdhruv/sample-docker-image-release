@@ -32,11 +32,9 @@ pipeline:
                     dockerfile: Dockerfile
                     labels:
                       latest: "22.04"
-          infrastructure:
-            type: KubernetesDirect
-            spec:
-              connectorRef: DhrubaDemoCI2
-              namespace: dhruba-demo-ci
-              automountServiceAccountToken: true
-              nodeSelector: {}
-              os: Linux
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
